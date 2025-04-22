@@ -3,9 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 import './ProductCard.css'
+import { ProductCardType } from "../../views/Products/ProductsType";
 
-export default function ProductCard({ product, limit = 150 }) {
-  const [visibleCount, setVisibleCount] = useState(limit);
+interface ProductCardProps {
+  product: ProductCardType;
+  limit?: number;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product, limit = 150 }) => {
+  const [visibleCount, setVisibleCount] = useState<number>(limit);
   const { title, image, description } = product;
 
   const handleViewMore = () => {
@@ -34,3 +40,5 @@ export default function ProductCard({ product, limit = 150 }) {
     </div>
   );
 }
+
+export default ProductCard;

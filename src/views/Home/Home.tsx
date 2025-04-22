@@ -1,9 +1,8 @@
-// import '../../app/styles/globals.css';
 import Link from "next/link";
 import './Home.css';
 
 
-export default function HomePage() {
+const HomePage: React.FC = () => {
  return (
    <div className="mainContainer">
      <Link href="/products">
@@ -16,3 +15,5 @@ export default function HomePage() {
    </div>
  );
 }
+
+export default HomePage;
